@@ -1,0 +1,28 @@
+name: Gh-Pages
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+
+    steps:
+      - uses: actions/checkout@v2 # Only works with v2
+      - uses: subosito/flutter-action@v1
+      - run: flutter pub get
+      - run: flutter test
+      - run: flutter build web --base-href "/flutter_web/"
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: "build/web"
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@main  
