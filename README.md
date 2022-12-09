@@ -8,22 +8,18 @@ This project is a starting point for making a workflow CI/CD of Flutter Web appl
 
 .github/workflows/flutter_web.yml
 
-update flutter_web line 21 
-```
---base-href "/flutter_web/" to your repository name
-```
 
 2. On your github project page, go to Settings tab -> Pages -> build and deployment -> source, then select Github Actions
 
 3. Git push your local flutter project to github and your project will start building in Actions tab
 
-You are done! you can browse the flutter web application e.g. https://ufo888.github.io/flutter_web
+You are done! you can browse the flutter web application e.g. https://{your github account}.github.io/{your repo name}
 
 If you like my flutter_web github page starter project, please give me a Star.
 
 Enjoy coding!
 
-\
+## To learn more flutter, below is the official links
 
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)

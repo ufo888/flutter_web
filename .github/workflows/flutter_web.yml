@@ -18,7 +18,7 @@ jobs:
       - uses: subosito/flutter-action@v1
       - run: flutter pub get
       - run: flutter test
-      - run: flutter build web --base-href "/flutter_web/"
+      - run: flutter build web --base-href ${{ github.event.repository.name }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
